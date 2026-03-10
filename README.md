@@ -2,8 +2,6 @@
 
 > 🚀 轻量级微信公众号文章下载工具 - 无需浏览器，一行命令提取为 Markdown/JSON
 
-[![npm version](https://img.shields.io/npm/v/wechat-article-downloader.svg)](https://www.npmjs.com/package/wechat-article-downloader)
-[![PyPI version](https://img.shields.io/pypi/v/wechat-article-downloader.svg)](https://pypi.org/project/wechat-article-downloader)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js >=14](https://img.shields.io/badge/node-%3E%3D14-green.svg)](https://nodejs.org/)
 [![Python >=3.7](https://img.shields.io/badge/python-%3E%3D3.7-blue.svg)](https://www.python.org/)
@@ -23,16 +21,22 @@
 
 ## 📦 安装
 
-### Node.js
+> **注意**: npm 和 PyPI 包即将发布，目前请从 GitHub 安装使用
 
+### 从 GitHub 安装
+
+**Node.js**
 ```bash
-npm install wechat-article-downloader
+git clone https://github.com/chemaoxian/wechat-article-downloader.git
+cd wechat-article-downloader
+npm install
 ```
 
-### Python
-
+**Python**
 ```bash
-pip install wechat-article-downloader
+git clone https://github.com/chemaoxian/wechat-article-downloader.git
+cd wechat-article-downloader
+pip install -e .
 ```
 
 ---
@@ -435,6 +439,6 @@ MIT License
 ## 📮 联系方式
 
 - GitHub: [chemaoxian/wechat-article-downloader](https://github.com/chemaoxian/wechat-article-downloader)
-- npm: [wechat-article-downloader](https://www.npmjs.com/package/wechat-article-downloader)
-- PyPI: [wechat-article-downloader](https://pypi.org/project/wechat-article-downloader)
 - Email: 443224841@qq.com
+
+> **注意**: npm 和 PyPI 包发布后，相关链接将在此处更新
