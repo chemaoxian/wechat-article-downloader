@@ -1,0 +1,101 @@
+{
+  "name": "wechat-article-downloader",
+  "version": "1.0.0",
+  "description": "Download and parse WeChat official account articles - extract to Markdown/JSON without browser",
+  "author": "Your Name",
+  "license": "MIT",
+  "tools": [
+    {
+      "name": "download_article",
+      "description": "Download WeChat official account article from URL and return parsed content in Markdown, JSON, or plain text format",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "WeChat article URL (e.g., https://mp.weixin.qq.com/s/xxxxx)"
+          },
+          "format": {
+            "type": "string",
+            "enum": ["markdown", "json", "text"],
+            "default": "markdown",
+            "description": "Output format: markdown, json, or plain text"
+          },
+          "outputDir": {
+            "type": "string",
+            "description": "Optional directory to save the article. If not provided, returns content directly."
+          }
+        },
+        "required": ["url"]
+      },
+      "returns": {
+        "type": "object",
+        "description": "Article object with title, author, content, and metadata"
+      }
+    },
+    {
+      "name": "parse_html",
+      "description": "Parse WeChat article from HTML content string",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "html": {
+            "type": "string",
+            "description": "HTML content of WeChat article"
+          },
+          "sourceUrl": {
+            "type": "string",
+            "description": "Original article URL for reference"
+          },
+          "format": {
+            "type": "string",
+            "enum": ["markdown", "json", "text"],
+            "default": "markdown",
+            "description": "Output format"
+          }
+        },
+        "required": ["html"]
+      },
+      "returns": {
+        "type": "object",
+        "description": "Parsed article object"
+      }
+    },
+    {
+      "name": "batch_download",
+      "description": "Download multiple WeChat articles from a list of URLs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of WeChat article URLs"
+          },
+          "outputDir": {
+            "type": "string",
+            "description": "Directory to save all articles"
+          },
+          "format": {
+            "type": "string",
+            "enum": ["markdown", "json", "all"],
+            "default": "markdown",
+            "description": "Output format for all articles"
+          },
+          "delay": {
+            "type": "number",
+            "default": 1000,
+            "description": "Delay between requests in milliseconds"
+          }
+        },
+        "required": ["urls", "outputDir"]
+      },
+      "returns": {
+        "type": "object",
+        "description": "Object with results array and errors array"
+      }
+    }
+  ]
+}

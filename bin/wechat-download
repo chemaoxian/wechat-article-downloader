@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+/**
+ * WeChat Article Downloader CLI Entry Point
+ *
+ * Supports both:
+ * 1. Local execution: node bin/wechat-download
+ * 2. Installed package: wechat-download
+ */
+
+const path = require('path');
+
+// Support local execution without installation
+// Resolve path to src/js/cli.js
+const cliPath = path.join(__dirname, '..', 'src', 'js', 'cli.js');
+require(cliPath);

@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wechat-article-downloader"
+version = "1.0.0"
+description = "Lightweight WeChat official account article downloader - extract articles to Markdown/JSON without browser"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.7"
+authors = [
+    {name = "chemaoxian", email = "443224841@qq.com"}
+]
+keywords = [
+    "wechat", "weixin", "article", "downloader", "scraper",
+    "markdown", "cli", "crawler", "微信公众号"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "aiohttp>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+]
+
+[project.scripts]
+wechat-download = "wechat_article_downloader.cli:main"
+wechat-article-downloader = "wechat_article_downloader.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/chemaoxian/wechat-article-downloader"
+"Bug Tracker" = "https://github.com/chemaoxian/wechat-article-downloader/issues"
+Documentation = "https://github.com/chemaoxian/wechat-article-downloader#readme"
+
+[tool.setuptools.package-dir]
+wechat_article_downloader = "src/python"
+
+[tool.black]
+line-length = 100
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests/python"]

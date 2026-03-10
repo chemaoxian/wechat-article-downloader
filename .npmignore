@@ -1,0 +1,33 @@
+# WeChat Article Downloader - npm ignore file
+
+# Source code (we include src/ in files)
+src/python/
+
+# Tests
+tests/
+
+# Development files
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docs (except README)
+*.md
+!README.md
+
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
